@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+
+{% block content %}   
+
+<h1>Codottico - Ottico</h1>
+{% for element in object_list %}
+    <p>{{element.codottico}} - <a href= "{{element.get_absolute_url}}">{{element.nome}}</a></p>
+{% endfor %}
+
+{% endblock %}

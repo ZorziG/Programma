@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<center>
+{% if searched %}
+    <h1>Hai cercato {{ searched }}</h1>
+    <br/>
+    {% for element in ottico %}
+      <a href="{% url 'anagrafica:anagrafica-detail' element.codottico %}">{{element.codottico}}-{{element.nome}}-{{element.citta}}</a><br/>
+    {% endfor %}
+{% else %}
+    <h1>Nome non trovato</h1> 
+{% endif %}    
+
+
+</center>
+
+{% endblock %}

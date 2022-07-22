@@ -1,0 +1,88 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<style>
+  .anagrafica-button {
+    background-color: gray;
+    color: whitesmoke;
+    border: none;
+    border-radius: 2px;
+    cursor: pointer;
+    margin-right: 8px;
+    transition: opacity 0.15s;
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+  .anagrafica-button:hover {
+    opacity: 0,7;
+  }
+
+  .anagrafica-codice {
+    font-size: 20px;
+
+  }
+  .anagrafica-nome {
+    font-size: 25px;
+
+  }
+  .anagrafica-info {
+    white-space: pre-wrap;
+    line-height: 25px;
+  }
+</style>
+
+<p class="anagrafica-codice">
+  Codice ottico : {{ object.codottico }}
+</p>
+
+<p class="anagrafica-nome"> 
+  nome : {{ object.nome }}
+</p>
+
+<p class="anagrafica-info"> 
+  indirizzo : {{ object.indirizzo }}
+  citta : {{ object.citta }}
+  provincia : {{ object.provincia }}
+  cap : {{ object.cap }}
+  nome2 : {{ object.nome2 }}
+  indirizzo2 : {{ object.indirizzo2 }}
+  citta2 : {{ object.citta2 }}
+  provincia2 : {{ object.provincia2 }}
+  cap2 : {{ object.cap2 }}
+  telefono : {{ object.telefono }}
+  cellulare : {{ object.cellurare }}
+  codice fiscale : {{ object.codice_fiscale }}
+  Partita iva : {{ object.p_iva }}
+  sconto ottico : {{ object.sconto_gen }}
+  codice pagamento : {{ object.cod_pag }}
+  pagamento : {{ object.pagamento }}
+  banca : {{ object.banca }}
+  iban : {{ object.iban }}
+  abi : {{ object.abi }}
+  cab : {{ object.cab }}
+  fa : {{ object.fa }}
+  spedizione : {{ object.spedizione }}
+  pagamento corriere : {{ object.pagcorr }}
+  note : {{ object.note }}
+  codice pagamento : {{ object.codcpa }}
+  email : {{ object.email }}
+  pec : {{ object.pec }}
+  applicatore : {{ object.applicatore }}
+  data registrazione ottico : {{ object.data_registrazione }}
+</p>
+
+<button class="anagrafica-button">
+  <a href="{% url 'anagrafica:anagrafica-update' object.codottico %}">
+    Modificare anagrafica
+  </a>
+</button>
+
+<button class="anagrafica-button">
+  <a href="{% url 'anagrafica:anagrafica-delete' object.codottico %}">
+    Cancellare anagrafica
+  </a>
+</button>
+
+{% endblock %}

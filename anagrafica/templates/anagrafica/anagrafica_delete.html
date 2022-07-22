@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<form action="." method="POST"> {% csrf_token %}
+    <h1> Vuoi davvero cancellare l'ottico "{{object.nome }}"?</h1>
+    <p><input type="submit" value="Si"> <a href="../">Torna indietro</a></p>
+</form>
+
+{% endblock %}
