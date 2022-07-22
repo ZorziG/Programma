@@ -57,15 +57,8 @@ class AnagraficaDeleteView(DeleteView):
 
 class AnagraficaMenuView(View):
     template_name = "anagrafica\\anagrafica_menu.html"
-    def get(self, request, *args, **kwargs):
-        context = {
-            "anagrafica_menu" : [
-                "Mostra anagrafica", "Inserire anagrafica",
-                "Modifica anagrafica", "Cancella anagrafica", 
-                "Cerca anagrafica", "Torna indietro"
-                ]
-        }     
-        return render(request, self.template_name, context)
+    def get(self, request):
+        return render(request, self.template_name, {})
 
 def search_anagrafica(request):
     if request.method == "POST":
