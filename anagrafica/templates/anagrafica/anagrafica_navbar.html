@@ -1,50 +1,73 @@
 <style>
-.navbar-back {
-  display: inline-block;
-  margin-right: 20px;
+.header {
+  height: 50px;
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.back-menu {
   font-size: 19px;
-  vertical-align: middle;
-  margin-top: 5px;
 }
 
-.container-2 {
-  display: inline-block;
-  margin-top: 5px;
-
+.left-section {
+  width: 200px;
+  background-color: aqua;
 }
 
-.inbox {
-  height: 39px;
-  width: 220px;
-  border-radius: 8px;
+.right-section {
+  flex: 1;
+  max-width: 400px;
+  display: flex;
+  align-items: center;
+}
+.d-flex {
+  display: flex;
+  flex: 1;
+  height: 40px;
+}
+
+.search-bar {
+  flex: 1;
   font-size: 18px;
-  border: 1px solid #0c0f07;
+  padding-left: 10px;
+  border-width: 1px;
+  border-style: solid;
+  border-color: rgb(175, 175, 175);
+  border-radius: 2px;
+}
+.search-bar::placeholder {
+  font-size: 18px;
 }
 
-.btn {
+.serach-button {
   color: white;
-  background-color: rgb(137, 129, 129);
-  height: 39px;
-  width: 70px;
-  border-radius: 8px;
+  background-color: rgb(182, 182, 182);
   font-size: 16px;
-  border: none;
+  width: 80px;
+  border-width: 1px;
+  border-style: solid;
+  border-color: rgb(175, 175, 175);
+  margin-left: -1px;
+  border-radius: 2px;
   transition: 0.15s;
   cursor: pointer;
 }
-.btn:hover {
+.serach-button:hover {
   opacity: 0.5;
 }
 
 </style>
 
 <nav class="navbar bg-dark">
-  <div class="container">
-    <a class="navbar-back" href="{% url 'anagrafica:anagrafica-menu' %}">Menu anagrafica</a>
-    <div class="container-2" id="navbarSupportedContent">
+  <div class="header">
+    <div class="left-section">
+      <a class="back-menu" href="{% url 'anagrafica:anagrafica-menu' %}">Menu anagrafica</a>
+    </div>
+    <div class="right-section" id="navbarSupportedContent">
       <form class="d-flex" role="search" method="POST" action="{% url 'anagrafica:search-anagrafica'%}"> {% csrf_token %}
-        <input class="inbox me-2" type="search" placeholder="Cercare anagrafica" aria-label="Search" name="searched">
-        <button class="btn" type="submit">Search</button>
+        <input class="search-bar" type="search" placeholder="Cercare anagrafica" aria-label="Search" name="searched">
+        <button class="serach-button" type="submit">Search</button>
       </form>
     </div>
   </div>
