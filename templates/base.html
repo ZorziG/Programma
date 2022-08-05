@@ -8,12 +8,10 @@
     body,h1 {font-family: "Raleway", sans-serif}
     body, html {height: 100%}
     body  {background-color: rgb(204, 204, 204);}
-    </style>
-    {% load static %}
-    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    </style>   
   </head>
   <body>
-    {% include "anagrafica/anagrafica_navbar.html" %}  
+    {% include "navbar.html" %}  
     {% block content %}
     replace here
     {% endblock %}

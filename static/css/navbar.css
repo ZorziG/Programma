@@ -1,0 +1,61 @@
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.navbar {
+  overflow: hidden;
+  background-color: rgb(51,51,51);
+}
+
+.navbar a {
+  float: left;
+  color: rgb(243, 243, 243);
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 20px;
+}
+
+.navbar a:hover {
+  background-color: rgb(221,221,221);
+  color: black;
+}
+
+.d-flex {
+  display: flex;
+  flex: 1;
+  height:51px;
+}
+
+.search-bar {
+  flex: 1;
+  font-size: 20px;
+  padding-left: 10px;
+  border-width: 1px;
+  border-style: solid;
+  border-color: rgb(82, 82, 82);
+  border-radius: 2px;
+  max-width: 300px;
+}
+.search-bar::placeholder {
+  font-size: 20px;
+}
+
+.serach-button {
+  color: white;
+  background-color: rgb(82, 82, 82);
+  font-size: 16px;
+  width: 80px;
+  border-width: 1px;
+  border-style: solid;
+  border-color: rgb(82, 82, 82);
+  margin-left: -1px;
+  border-radius: 2px;
+  transition: 0.15s;
+  cursor: pointer;
+}
+.serach-button:hover {
+  background-color: rgb(221,221,221);
+  color: black;
+}
