@@ -2,31 +2,15 @@
 
 {% block content %}
 <style>
-  .anagrafica-button {
-    background-color: gray;
-    color: whitesmoke;
-    border: none;
-    border-radius: 2px;
-    cursor: pointer;
-    margin-right: 8px;
-    transition: opacity 0.15s;
-    padding-left: 5px;
-    padding-right: 5px;
-    padding-top: 10px;
-    padding-bottom: 10px;
-  }
-  .anagrafica-button:hover {
-    opacity: 0,7;
-  }
 
   .anagrafica-codice {
     font-size: 20px;
-
   }
+
   .anagrafica-nome {
     font-size: 25px;
-
   }
+
   .anagrafica-info {
     white-space: pre-wrap;
     line-height: 25px;
@@ -73,16 +57,11 @@
   data registrazione ottico : {{ object.data_registrazione }}
 </p>
 
-<button class="anagrafica-button">
-  <a href="{% url 'anagrafica:anagrafica-update' object.codottico %}">
-    Modificare anagrafica
-  </a>
-</button>
+<a href="{% url 'anagrafica:anagrafica-update' object.codottico %}">
+  Modificare anagrafica
+</a>
 
-<button class="anagrafica-button">
-  <a href="{% url 'anagrafica:anagrafica-delete' object.codottico %}">
-    Cancellare anagrafica
-  </a>
-</button>
-
+<a href="{% url 'anagrafica:anagrafica-delete' object.codottico %}">
+  Cancellare anagrafica
+</a>
 {% endblock %}

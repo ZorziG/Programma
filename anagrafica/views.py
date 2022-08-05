@@ -27,7 +27,7 @@ class AnagraficaListView(ListView):
 
 class AnagraficaDetailView(DetailView):
     template_name = "anagrafica\\anagrafica_detail.html"
-
+    
     def get_object(self):
         id_ = self.kwargs.get("id")
         return get_object_or_404(Anagrafica, codottico=id_)
@@ -61,8 +61,8 @@ class AnagraficaMenuView(View):
         return render(request, self.template_name, {})
 
 def search_anagrafica(request):
-    if request.method == "POST":
-        searched = request.POST['searched']
+    if request.method == "GET":
+        searched = request.GET['searched']
         ottico = Anagrafica.objects.filter(nome__contains=searched)
         return render(request, "anagrafica\\search_anagrafica.html", {"searched":searched,"ottico":ottico})
     else:

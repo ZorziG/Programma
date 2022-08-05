@@ -4,7 +4,7 @@
       <a class="back-menu" href="{% url 'anagrafica:anagrafica-menu' %}">Menu anagrafica</a>
     </div>
     <div class="right-section" id="navbarSupportedContent">
-      <form class="d-flex" role="search" method="POST" action="{% url 'anagrafica:search-anagrafica'%}"> {% csrf_token %}
+      <form class="d-flex" role="search" method="GET" action="{% url 'anagrafica:search-anagrafica'%}">
         <input class="search-bar" type="search" placeholder="Cercare anagrafica" aria-label="Search" name="searched">
         <button class="serach-button" type="submit">Search</button>
       </form>
